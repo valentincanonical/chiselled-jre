@@ -11,11 +11,14 @@ public class Main {
      *   This test should not throw
      */
     public static void main(String[] args) throws IOException {
-        URL url = new URL("https://github.com");
+        URL url = new URL("https://example.com/");
         InputStream stream = url.openStream();
         BufferedReader reader =
             new BufferedReader(new InputStreamReader(stream));
-        while (reader.readLine()!=null){
-        }
+            String line;
+            do {
+                line = reader.readLine();
+                System.out.println(line);
+            } while (line!=null);
     }
 }
